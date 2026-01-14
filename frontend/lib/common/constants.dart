@@ -3,6 +3,14 @@ class ApiConstants {
   static const String todosUrl='/todos';
 }
 
+class RouteConstants{
+  static const String home ='/';
+  static const String theme ='/theme-settings';
+  static const String login ='/login';
+  static const String todoDetail ='/todo';
+  static const String settings ='/settings';
+}
+
 class AppConstants {
   static const appName='My Todo List 2026';
   static const maxContentLength=255;

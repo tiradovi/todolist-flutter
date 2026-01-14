@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../providers/theme_provider.dart';
 
@@ -17,10 +18,10 @@ class ThemePurchaseDialog extends StatelessWidget {
       content: Text('${themeProvider.getThemeName(theme)}을(를) 구매하시겠습니까? '
           '\n 가격 : ${themeProvider.getThemePrice(theme)}'),
       actions: [
-        TextButton(onPressed: () => Navigator.pop(context), child: Text("취소")),
+        TextButton(onPressed: () => context.pop(context), child: Text("취소")),
         FilledButton(
             onPressed: () async {
-              Navigator.pop(context);
+              context.pop(context);
 
               showDialog(
                   context: context,
@@ -29,7 +30,7 @@ class ThemePurchaseDialog extends StatelessWidget {
               final success = await themeProvider.purchaseTheme(theme);
 
               if (context.mounted) {
-                Navigator.pop(context); //로딩 닫기
+                context.pop(context); //로딩 닫기
 
                 if (success) {
                   themeProvider.changeTheme(theme);

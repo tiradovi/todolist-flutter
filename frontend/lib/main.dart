@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/common/app_router.dart';
 import 'package:frontend/providers/theme_provider.dart';
 import 'package:provider/provider.dart';
 import 'common/constants.dart';
@@ -22,11 +23,11 @@ class MyApp extends StatelessWidget {
       ],
       child: Consumer<ThemeProvider>(
         builder: (context, themeProvider, child) {
-          return MaterialApp(
+          return MaterialApp.router(
             debugShowCheckedModeBanner: false,
             title: AppConstants.appName,
             theme: themeProvider.themeData,
-            home: const TodoListScreen(),
+            routerConfig: AppRouter.router,
           );
         },
       ),

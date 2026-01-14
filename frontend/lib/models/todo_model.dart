@@ -43,14 +43,8 @@ class TodoModel {
     );
   }
 
-  /*
-   * TODO: formattedDate getter 작성
-   * - createdAt가 null이면 빈 문자열 반환
-   * - 아니면 'yyyy-MM-dd' 형식으로 반환
-   * - 예: '2026-01-12'
-   */
   String get formattedDate {
     if(createdAt == null) return '';
-    return '${createdAt!.year}=${createdAt!.month.toString().padLeft(2,'0')}-${createdAt!.day.toString().padLeft(2,'0')}';
+    return '${createdAt!.year}-${createdAt!.month.toString().padLeft(2,'0')}-${createdAt!.day.toString().padLeft(2,'0')}';
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:frontend/screens/theme_setting_screen.dart';
 import 'package:frontend/widgets/todolist/add_todo_dialog.dart';
 import 'package:frontend/widgets/todolist/error_state.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../providers/todo_provider.dart';
 import '../widgets/todolist/empty_state.dart';
@@ -39,12 +40,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
         title: const Text('My Todo List 2026'),
         actions: [
           IconButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ThemeSettingScreen()));
-              },
+              onPressed: ()=> context.push("/settings/theme-settings"),
               icon: const Icon(Icons.palette_outlined))
         ],
       ),
@@ -80,6 +76,34 @@ class _TodoListScreenState extends State<TodoListScreen> {
                     completedCount: provider.completedCount,
                   )),
               const Divider(height: 1),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                child: Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [
+                    OutlinedButton(
+                      onPressed: () {
+                        context.push('/todo/1');
+                      },
+                      child: const Text('Todo Detail'),
+                    ),
+                    OutlinedButton(
+                      onPressed: () {
+                        context.push('/settings');
+                      },
+                      child: const Text('Settings'),
+                    ),
+                    OutlinedButton(
+                      onPressed: () {
+                        context.push('/not-found');
+                      },
+                      child: const Text('Error Screen'),
+                    ),
+                  ],
+                ),
+              ),
+
               Expanded(
                 child: RefreshIndicator(
                   onRefresh: () => provider.loadTodos(),

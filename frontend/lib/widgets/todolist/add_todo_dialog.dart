@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class AddTodoDialog extends StatefulWidget {
   final Function(String) onAdd;
@@ -16,7 +17,7 @@ class _AddTodoDialogState extends State<AddTodoDialog> {
     final text = _controller.text.trim();
     if (text.isNotEmpty) {
       widget.onAdd(text);
-      Navigator.pop(context);
+      context.pop(context);
     }
   }
 
@@ -36,7 +37,7 @@ class _AddTodoDialogState extends State<AddTodoDialog> {
       ),
       actions: [
         TextButton(
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => context.pop(context),
           child: const Text('Cancel'),
         ),
         FilledButton(

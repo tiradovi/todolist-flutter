@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../common/app_styles.dart';
 import '../../providers/todo_provider.dart';
@@ -52,7 +53,6 @@ class TodoItem extends StatelessWidget {
         trailing: IconButton(
           icon: const Icon(
             Icons.delete_outline,
-            color: Colors.red,
           ),
           onPressed: () {
             if (todo.id != null) {
@@ -72,16 +72,15 @@ class TodoItem extends StatelessWidget {
         content: const Text('Are you sure you want to delete this todo?'),
         actions: [
           TextButton(
-            onPressed: () => Navigator.pop(ctx),
+            onPressed: () => context.pop(ctx),
             child: const Text('Cancel'),
           ),
           FilledButton(
             onPressed: () {
               provider.removeTodo(id);
-              Navigator.pop(ctx);
+              context.pop(ctx);
             },
             style: FilledButton.styleFrom(
-              backgroundColor: Colors.red,
             ),
             child: const Text('Delete'),
           ),

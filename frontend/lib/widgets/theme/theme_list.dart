@@ -15,6 +15,7 @@ class ThemeList extends StatelessWidget {
       (AppThemeType.purple, const Color(0xFF6200EE)),
       (AppThemeType.pink, const Color(0xFFE91E63)),
       (AppThemeType.blue, const Color(0xFF2196F3)),
+      (AppThemeType.green, const Color(0xFF50D50D)),
     ];
 
     return ListView(
