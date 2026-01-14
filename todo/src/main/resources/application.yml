@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tododb
+    username: postgres
+    password: tjee1234
+    driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      mode: always
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.my.todo.dto
+  configuration:
+    map-underscore-to-camel-case: true
+
+server:
+  port: 8080

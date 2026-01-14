@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.my.todo.mapper.TodoMapper">
+
+    <select id="findAll" resultType="TodoDto">
+        SELECT id, content, is_completed as isCompleted, created_at as createdAt
+        FROM todos
+        ORDER BY id DESC
+    </select>
+
+    <insert id="save" parameterType="TodoDto" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO todos (content, is_completed)
+        VALUES (#{content}, #{isCompleted})
+    </insert>
+
+    <update id="update" parameterType="TodoDto">
+        UPDATE todos
+        SET is_completed = #{isCompleted}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM todos WHERE id = #{id}
+    </delete>
+
+</mapper>
