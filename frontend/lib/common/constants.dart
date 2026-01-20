@@ -7,6 +7,7 @@ class RouteConstants{
   static const String home ='/';
   static const String theme ='/theme-settings';
   static const String login ='/login';
+  static const String map ='/map';
   static const String todoDetail ='/todo';
   static const String settings ='/settings';
 }

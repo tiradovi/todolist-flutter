@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
 enum AppThemeType {
-  purple, //무료
-  pink, //유료
-  blue, //유료
-  green // 내가 만든거
+  purple,
+  pink,
+  blue,
+  green
 }
 
-// 테마가 변경됨을 전체적으로 설정하기 위해 공지하여변경하겠다 클래스를 함께 사용
 class ThemeProvider with ChangeNotifier {
   AppThemeType _currentTheme = AppThemeType.purple;
 

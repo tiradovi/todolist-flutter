@@ -100,6 +100,12 @@ class _TodoListScreenState extends State<TodoListScreen> {
                       },
                       child: const Text('Error Screen'),
                     ),
+                    OutlinedButton(
+                      onPressed: () {
+                        context.push('/map');
+                      },
+                      child: const Text('Map Screen'),
+                    ),
                   ],
                 ),
               ),

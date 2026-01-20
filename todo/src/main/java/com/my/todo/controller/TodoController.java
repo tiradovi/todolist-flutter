@@ -10,7 +10,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/todos")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*") //-> webconfig 형태 변경
 public class TodoController {
 
     private final TodoService todoService;
