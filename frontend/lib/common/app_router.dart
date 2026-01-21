@@ -1,10 +1,9 @@
 import 'package:frontend/common/constants.dart';
-import 'package:frontend/screens/font_screen.dart';
-import 'package:frontend/screens/game_screen.dart';
 import 'package:frontend/screens/login_screen.dart';
 import 'package:frontend/screens/setting_screen.dart';
 import 'package:frontend/screens/theme_setting_screen.dart';
 import 'package:frontend/screens/todo_detail_screen.dart';
+import 'package:frontend/screens/todo_list_screen.dart';
 import 'package:go_router/go_router.dart';
 
 import '../screens/error_screen.dart';
@@ -16,7 +15,7 @@ class AppRouter {
         GoRoute(
             path: RouteConstants.home,
             name: "home",
-            builder: (context, state) => const GameScreen()),
+            builder: (context, state) => const TodoListScreen()),
         GoRoute(
             path: RouteConstants.login,
             name: "login",

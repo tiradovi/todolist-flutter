@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/common/app_router.dart';
-import 'package:frontend/providers/game_provider.dart';
 import 'package:frontend/providers/music_provider.dart';
 import 'package:frontend/providers/theme_provider.dart';
 import 'package:provider/provider.dart';
@@ -21,7 +20,6 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => TodoProvider()),
         ChangeNotifierProvider(create: (_) => ThemeProvider()),
-        ChangeNotifierProvider(create: (_) => GameProvider()),
         ChangeNotifierProvider(create: (_) => MusicProvider()),
       ],
       child: Consumer<ThemeProvider>(
